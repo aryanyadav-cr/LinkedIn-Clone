@@ -1,8 +1,9 @@
-import img1 from "./img 1.png";
+import img2 from "./img2.png";
 import { ThumbsUp } from "lucide-react"
 import { MessageSquare } from "lucide-react"
 import { Share2 } from "lucide-react"
-import { useState } from "react";
+import { useEffect, useState } from "react";
+import img4 from "./img4.png"
 export default function Card() {
 
 const [islike , setIsLike]=useState(false);
@@ -16,7 +17,13 @@ const handleLike = () => {
     }
     setIsLike(!islike);
   };
+// 
+const [random , setrandom] = useState(0);
 
+useEffect(() => {
+    const randomMin = Math.floor(Math.random() * 60);
+   setrandom(randomMin);
+  }, []);
 
      return(
         <div className="max-w-xl mx-auto bg-white rounded-xl shadow-md p-4 mt-4">
@@ -25,18 +32,18 @@ const handleLike = () => {
         <div className="flex items-start justify-between">
           <div className="flex gap-3">
             <img
-              src={img1}
+              src={img2}
               alt="profile"
               className="w-12 h-12 rounded-full"
             />
             <div>
               <h3 className="font-semibold text-sm">
-                Full name  <span className="text-blue-500">✔</span>
+                Aryan Yadav <span className="text-blue-500"></span>
               </h3>
               <p className="text-xs text-gray-500">
-                B.Tech Mechanical Engineering student
+               BCA 
               </p>
-              <p className="text-xs text-gray-400">55m 🌍</p>
+              <p className="text-xs text-gray-400">{random}m </p>
             </div>
           </div>
 
@@ -45,7 +52,7 @@ const handleLike = () => {
 
         {/* Content */}
         <div className="mt-3 text-sm text-gray-800">
-          I’m glad to share that I have received an internship offer letter from
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptas
           
           <span className="text-gray-500 cursor-pointer ml-1">...more</span>
         </div>
@@ -53,7 +60,7 @@ const handleLike = () => {
         {/* Image */}
         <div className="mt-3">
           <img
-            src={img1}
+            src={img4}
             alt="post"
             className="w-full rounded-lg border"
           />
