@@ -2,12 +2,18 @@
 
 
 import img2 from "./img2.png";
-
+import img3 from "./img3.png"
 export default function Left() {
     return (
         <div className="w-55 h-[445px] grid items-start gap-5 ">
             <div className="grid w-55 h-62 items-start bg-white rounded-lg">
-                <div className="h-15 w-55 bg-gray-200 rounded-lg"></div>
+                <div className="h-15 w-55 bg-gray-200 rounded-lg overflow-hidden">
+                    <img
+                        src={img3}
+                        alt=""
+                        className="w-full h-full object-cover"
+                    />
+                </div>
                 <div className="absolute top-25 left-30 rounded-full h-25 w-25  overflow-hidden">
                     <img
                         src={img2}
